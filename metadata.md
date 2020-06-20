@@ -1,8 +1,26 @@
-Metadata document for Tuber.csv
+Metadata document for pcrn_fungi_inventory_ALL.csv
 
-This table contains all records of the truffle genus Tuber found on the Mycoportal.com database.  Mycoportal aggregates digitized herbarium records as well as personal observations from iNaturalist and Mushroom Observer.
+This table was created from the original file 'ncrn_fung_inventory_spp_list.xlsx'downloaded from https://irma.nps.gov/Datastore/Reference/Profile/1045544; the 'pcrn_fungi_inventory_ALL.csv' file was created by concatenating all of the individual sheets in the excel file into one csv file. 
 
-This data was downloaded from Mycoportal.com on June 19, 2020 using the following URL: https://mycoportal.org/portal/collections/download/index.php?dltype=specimen&starr={%22taxa%22:%22Tuber%22,%22usethes%22:true,%22taxontype%22:%221%22}&jsoncollstarr={%22db%22:%22all%22}
+The original metadata for the file can be accessed in XML format here: https://irma.nps.gov/Datastore/DownloadFile/536149
 
-The dataset was exported in the 'Darwin Core' format. There are many (80+) columns in this initial dataset, following the Darwin Core data format. A full description of each column can be found at: https://dwc.tdwg.org/terms/
+In summary, this data represents surveys of fungal species in four National parks, Antietam National Battlefield, Catoctin Mountain Park, Chesapeake and Ohio Canal National Historical Park, and Prince William Forest Park conducted in 2005 and 2006.
+
+Columns include:
+
+Unit_Code: Code for the park from National Park System Unit Code Thesaurus
+Foray_Name: Individual name given to the foray event
+Protocol_Name: Method for collecting, either plot or foray
+Start_Date: Date foray begun
+Genus: Taxonomic information
+Species: Taxonomic information
+Host: Substrate information
+Collection_Number: Unique ID for each collection 
+Voucher_Specimen: T/F if voucher specimen was created
+Outside_Plot: T/F if found outside the plot
+Comments
+NPS_Accession_Num: National Park Service accession number
+NPS_Catalog_Num: National Park Service catalog number
+Collector: Collector name
+
 
