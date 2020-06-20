@@ -1,0 +1,25 @@
+Q 2:
+None of the columns in this dataset contain multiple values, so the data is already in 1NF. However, I would like to separate the data into 'Collection Information' and 'Location Information' (coll_info and location).
+These tables would both use Collection_Number as the primary key, since this field is not null and only contains unique values. 
+coll_info would contain: Collection_Number, Start_date, Genus, Species, Host, Voucher_Specimen
+location would contain: Collection_Number, Unit_Code, Foray_Name, Protocol_Name, Outside_Plot
+
+Qs 3&4:
+
+import pandas as pd
+from sqlalchemy import create_engine
+import sqlite3
+
+engine = create_engine('sqlite:///collections.db', echo=True)
+conn = engine.connect()
+
+data=pd.read_csv('pcrn_fungi_inventory_ALL.csv')
+
+data.to_sql('collections',con=engine, if_exists='replace', index='false')
+
+conn.execute("DROP TABLE IF EXISTS coll_info;")
+conn.execute("CREATE TABLE coll_info (Collection_Number integer primary key, Start_date, Genus, Species, Host, Voucher_Specimen);")
+conn.execute("DROP TABLE IF EXISTS location;")
+conn.execute("CREATE TABLE location (Collection_Number integer primary key, Unit_Code, Foray_Name, Protocol_Name, Outside_Plot);")
+
+
